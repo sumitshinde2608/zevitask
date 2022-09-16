@@ -1,0 +1,52 @@
+.card-layout {
+  /* margin: 20px; */
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  /* background: rgb(0, 0, 0); */
+  background: rgba(232, 168, 235, 0.897); /* Black see-through */
+  background: rgba(118, 194, 245, 0.897); /* Black see-through */
+
+  color: #f1f1f1;
+  width: 100%;
+  /* transition: 0.5s ease; */
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.overlay:hover {
+  width: 280px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-image {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.card-image:hover {
+  cursor: pointer;
+}
+
+.product-image {
+  width: 320px;
+  height: 300px;
+  border-radius: 5px;
+}
+#product-name {
+  font-size: 20px;
+  font-weight: 400;
+  /* margin-bottom: 10px; */
+}
+
+.ratings {
+  display: flex;
+}

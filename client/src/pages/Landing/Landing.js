@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Landing.css";
 import Logo from "./assets/logo.png";
 import Suggestions from "./components/Suggestions/Suggestions";
+
 // import SearchButton from "./search-button.png";
 
 const Landing = () => {
@@ -21,13 +22,15 @@ const Landing = () => {
                 setSuggestionsDisplay("block");
               }}
             />
-            <input
-              type="button"
-              value="Search"
-              onClick={() => {
-                console.log("clicked");
-              }}
-            />
+            <a href="/search">
+              <input
+                type="button"
+                value="Search"
+                // onClick={() => {
+                //   console.log("clicked");
+                // }}
+              />
+            </a>
             {/* </input> */}
           </form>
         </div>
