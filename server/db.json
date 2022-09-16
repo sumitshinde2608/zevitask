@@ -1,0 +1,126 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Round Neck Cotton T-Shirt",
+      "original_price": 599,
+      "discount_price": 549,
+      "rating": 5,
+      "brand": "HRX",
+      "product_image": "https://loremflickr.com/320/240/roundneck,tshirt/all"
+    },
+    {
+      "id": 2,
+      "name": "High Waist Trousers",
+      "original_price": 999,
+      "discount_price": 599,
+      "rating": 5,
+      "brand": "Armani",
+      "product_image": "https://loremflickr.com/320/240/trousers/all"
+    },
+    {
+      "id": 3,
+      "name": "High Neck Pullover",
+      "original_price": 999,
+      "discount_price": 599,
+      "rating": 5,
+      "brand": "Armani",
+      "product_image": "https://loremflickr.com/320/240/pullover/all"
+    },
+    {
+      "id": 4,
+      "name": "Casual Shirt",
+      "original_price": 999,
+      "discount_price": 399,
+      "rating": 4,
+      "brand": "HRX",
+      "product_image": "https://loremflickr.com/320/240/casual,tshirt/all"
+    },
+    {
+      "id": 5,
+      "name": "Oversized Hoodie",
+      "original_price": 2050,
+      "discount_price": 1099,
+      "rating": 4,
+      "brand": "Armani",
+      "product_image": "https://loremflickr.com/320/240/hoodie/all"
+    },
+    {
+      "id": 6,
+      "name": "Woolen Sweater",
+      "original_price": 999,
+      "discount_price": 699,
+      "rating": 5,
+      "brand": "HnM",
+      "product_image": "https://loremflickr.com/320/240/sweater/all"
+    },
+    {
+      "id": 7,
+      "name": "Denim Jeans",
+      "original_price": 999,
+      "discount_price": 499,
+      "rating": 3,
+      "brand": "HnM",
+      "product_image": "https://loremflickr.com/320/240/jeans/all"
+    },
+    {
+      "id": 8,
+      "name": "Track Pants",
+      "original_price": 999,
+      "discount_price": 499,
+      "rating": 3,
+      "brand": "HnM",
+      "product_image": "https://loremflickr.com/320/240/track,pants/all"
+    }
+  ],
+
+  "trends": [
+    {
+      "id": 1,
+      "name": "Formal Shirts ",
+      "trend_image": "https://loremflickr.com/150/225/shirt/all"
+    },
+    {
+      "id": 2,
+      "name": "Torn Jeans",
+      "trend_image": "https://loremflickr.com/150/225/Jeans/all"
+    },
+    {
+      "id": 3,
+      "name": "Linen",
+      "trend_image": "https://loremflickr.com/150/225/jumpsuit/all"
+    },
+    {
+      "id": 4,
+      "name": "Leather Jacket",
+      "trend_image": "https://loremflickr.com/150/225/jacket/all"
+    },
+    {
+      "id": 5,
+      "name": "Solid Tshirts",
+      "trend_image": "https://loremflickr.com/150/225/tshirt/all"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": 1,
+      "suggestion": "Stripped Shirt Dresses"
+    },
+    {
+      "id": 2,
+      "suggestion": "Satin Trousers"
+    },
+    {
+      "id": 3,
+      "suggestion": "Denim Jumpsuits"
+    },
+    {
+      "id": 4,
+      "suggestion": "Leather Dresses"
+    },
+    {
+      "id": 3,
+      "suggestion": "Solid Tshirts"
+    }
+  ]
+}

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Landing.css";
 import Logo from "./assets/logo.png";
+import Suggestions from "./components/Suggestions/Suggestions";
 // import SearchButton from "./search-button.png";
 
 const Landing = () => {
+  const [suggestionsDisplay, setSuggestionsDisplay] = useState(false);
   return (
     <div className="main-container">
       <div className="head-nav">
@@ -16,7 +18,7 @@ const Landing = () => {
               type="search"
               placeholder="Search"
               onFocus={() => {
-                console.log("focused");
+                setSuggestionsDisplay("block");
               }}
             />
             <input
@@ -28,6 +30,10 @@ const Landing = () => {
             />
             {/* </input> */}
           </form>
+        </div>
+
+        <div className="suggestions">
+          {suggestionsDisplay ? <Suggestions props={true} /> : null}
         </div>
       </div>
     </div>

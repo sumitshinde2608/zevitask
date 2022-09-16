@@ -1,0 +1,30 @@
+.suggestion-container {
+  height: 600px;
+  width: 1000px;
+  /* border: 1px solid; */
+  border-radius: 5px;
+  margin-top: 10px;
+  background-color: white;
+  /* box-shadow: 5px 5px ; */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  padding: 20px;
+  padding-left: 30px;
+}
+
+.trends-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trend-image {
+  /* margin-right: 10px; */
+  border: 5px solid white;
+}
+
+#trend-image {
+  height: 220px;
+  width: 150px;
+  border-radius: 5px;
+}
