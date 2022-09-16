@@ -1,6 +1,6 @@
 import React from "react";
 import "./Landing.css";
-import Logo from "./logo.png";
+import Logo from "./assets/logo.png";
 // import SearchButton from "./search-button.png";
 
 const Landing = () => {
