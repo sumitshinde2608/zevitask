@@ -8,8 +8,8 @@ export const Search = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [pricefilter, setPricefilter] = useState(false);
-  // const [below500filter, setBelow500filter] = useState(false);
-  // const [above500filter, setAbove500filter] = useState(false);
+  const [ratingfilter, setRatingfilter] = useState(false);
+  const [brandfilter, setBrandfilter] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -43,6 +43,34 @@ export const Search = () => {
     }
   };
 
+  //ratings filter
+  const filterRating = (e, validator) => {
+    const value = e.target.value;
+    let Products = filteredProducts;
+
+    if (validator) {
+      const products_list = Products.filter(
+        (item) => item.rating === parseInt(value)
+      );
+      setProducts(products_list);
+      // }
+    } else {
+      setProducts(Products);
+    }
+  };
+
+  //brands filter
+  const filterBrands = (e, validator) => {
+    const value = e.target.value;
+    let Products = filteredProducts;
+    if (validator) {
+      const products_list = Products.filter((item) => item.brand === value);
+      setProducts(products_list);
+      // }
+    } else {
+      setProducts(Products);
+    }
+  };
   return (
     <div>
       <div className="search-area">
@@ -73,17 +101,53 @@ export const Search = () => {
               <p style={{ fontSize: "24px" }}>BRAND</p>
               <div className="brands-list">
                 <label>
-                  <input type="checkbox" value="Armani" />
+                  <input
+                    type="checkbox"
+                    value="Armani"
+                    onClick={async (e) => {
+                      if (!brandfilter) {
+                        setBrandfilter(true);
+                        filterBrands(e, true);
+                      } else {
+                        setBrandfilter(false);
+                        filterBrands(e, false);
+                      }
+                    }}
+                  />
                   Armani
                 </label>
 
                 <label>
-                  <input type="checkbox" value="Armani" />
+                  <input
+                    type="checkbox"
+                    value="HRX"
+                    onClick={async (e) => {
+                      if (!brandfilter) {
+                        setBrandfilter(true);
+                        filterBrands(e, true);
+                      } else {
+                        setBrandfilter(false);
+                        filterBrands(e, false);
+                      }
+                    }}
+                  />
                   HRX
                 </label>
 
                 <label>
-                  <input type="checkbox" value="Armani" />
+                  <input
+                    type="checkbox"
+                    value="HnM"
+                    onClick={async (e) => {
+                      if (!brandfilter) {
+                        setBrandfilter(true);
+                        filterBrands(e, true);
+                      } else {
+                        setBrandfilter(false);
+                        filterBrands(e, false);
+                      }
+                    }}
+                  />
                   HnM
                 </label>
               </div>
@@ -133,27 +197,88 @@ export const Search = () => {
               <p style={{ fontSize: "24px" }}>RATINGS</p>
               <div className="ratings-list">
                 <label>
-                  <input type="checkbox" value={5} />
+                  <input
+                    type="checkbox"
+                    value="5"
+                    onClick={(e) => {
+                      if (!ratingfilter) {
+                        setRatingfilter(true);
+                        filterRating(e, true);
+                      } else {
+                        setRatingfilter(false);
+                        filterRating(e, false);
+                      }
+                    }}
+                  />
                   ⭐⭐⭐⭐⭐
                 </label>
 
                 <label>
-                  <input type="checkbox" value={4} />
+                  <input
+                    type="checkbox"
+                    value="4"
+                    onClick={(e) => {
+                      if (!ratingfilter) {
+                        setRatingfilter(true);
+                        filterRating(e, true);
+                      } else {
+                        setRatingfilter(false);
+                        filterRating(e, false);
+                      }
+                    }}
+                  />
                   ⭐⭐⭐⭐
                 </label>
 
                 <label>
-                  <input type="checkbox" value={3} />
+                  <input
+                    type="checkbox"
+                    value="3"
+                    onClick={(e) => {
+                      if (!ratingfilter) {
+                        setRatingfilter(true);
+                        filterRating(e, true);
+                      } else {
+                        setRatingfilter(false);
+                        filterRating(e, false);
+                      }
+                    }}
+                  />
                   ⭐⭐⭐
                 </label>
 
                 <label>
-                  <input type="checkbox" value={2} />
+                  <input
+                    type="checkbox"
+                    value="2"
+                    onClick={(e) => {
+                      if (!ratingfilter) {
+                        setRatingfilter(true);
+                        filterRating(e, true);
+                      } else {
+                        setRatingfilter(false);
+                        filterRating(e, false);
+                      }
+                    }}
+                  />
                   ⭐⭐
                 </label>
 
                 <label>
-                  <input type="checkbox" value={1} />⭐
+                  <input
+                    type="checkbox"
+                    value="1"
+                    onClick={(e) => {
+                      if (!ratingfilter) {
+                        setRatingfilter(true);
+                        filterRating(e, true);
+                      } else {
+                        setRatingfilter(false);
+                        filterRating(e, false);
+                      }
+                    }}
+                  />
+                  ⭐
                 </label>
               </div>
             </div>

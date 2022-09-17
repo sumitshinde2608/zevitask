@@ -23,7 +23,7 @@
       "name": "High Neck Pullover",
       "original_price": 999,
       "discount_price": 599,
-      "rating": 5,
+      "rating": 2,
       "brand": "Armani",
       "product_image": "https://loremflickr.com/320/240/pullover/all"
     },
@@ -50,7 +50,7 @@
       "name": "Woolen Sweater",
       "original_price": 999,
       "discount_price": 699,
-      "rating": 5,
+      "rating": 1,
       "brand": "HnM",
       "product_image": "https://loremflickr.com/320/240/sweater/all"
     },
