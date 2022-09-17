@@ -12,7 +12,6 @@ export const Search = () => {
       const { data } = await axios.get("http://localhost:8000/products");
       setProducts(data);
     };
-
     fetchProducts();
   }, []);
 
@@ -22,14 +21,7 @@ export const Search = () => {
         <div className="searchbar">
           <form>
             <input type="search" placeholder="Search" />
-            <input
-              type="button"
-              value="Search"
-              // onClick={() => {
-              //   console.log("clicked");
-              // }}
-            />
-            {/* </input> */}
+            <input type="button" value="Search" />
           </form>
         </div>
         <div>
@@ -48,7 +40,70 @@ export const Search = () => {
           <h1>Search Results</h1>
         </div>
         <div className="results-area">
-          <div className="search-filters">Search</div>
+          <div className="search-filters">
+            <div className="Brands-filter">
+              <p style={{ fontSize: "24px" }}>BRAND</p>
+              <div className="brands-list">
+                <label>
+                  <input type="checkbox" value="Armani" />
+                  Armani
+                </label>
+
+                <label>
+                  <input type="checkbox" value="Armani" />
+                  HRX
+                </label>
+
+                <label>
+                  <input type="checkbox" value="Armani" />
+                  HnM
+                </label>
+              </div>
+            </div>
+
+            <hr />
+            <div className="Price-filter">
+              <p style={{ fontSize: "24px" }}>PRICE</p>
+              <div className="price-list">
+                <label>
+                  <input type="checkbox" value="Armani" /> Under Rs. 500{" "}
+                </label>
+
+                <label>
+                  <input type="checkbox" value="Armani" /> Rs. 500 - Rs. 3000
+                </label>
+              </div>
+            </div>
+            <hr />
+            <div className="Ratings-filter">
+              <p style={{ fontSize: "24px" }}>RATINGS</p>
+              <div className="ratings-list">
+                <label>
+                  <input type="checkbox" value={5} />
+                  ⭐⭐⭐⭐⭐
+                </label>
+
+                <label>
+                  <input type="checkbox" value={4} />
+                  ⭐⭐⭐⭐
+                </label>
+
+                <label>
+                  <input type="checkbox" value={3} />
+                  ⭐⭐⭐
+                </label>
+
+                <label>
+                  <input type="checkbox" value={2} />
+                  ⭐⭐
+                </label>
+
+                <label>
+                  <input type="checkbox" value={1} />⭐
+                </label>
+              </div>
+            </div>
+          </div>
           <div className="search-results">
             {products.map((product) => (
               <Card

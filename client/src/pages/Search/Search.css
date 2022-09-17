@@ -84,9 +84,27 @@ input[type="search"]:focus {
 
 .search-filters {
   width: 15vw;
-  background-color: #1183d6;
+  /* background-color: #1183d6; */
   height: available;
   padding-left: 40px;
+}
+
+.brands-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.price-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 20px;
+  font-weight: "500";
+  margin-bottom: 5px;
 }
 
 .search-results {
@@ -94,4 +112,9 @@ input[type="search"]:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.ratings-list {
+  display: flex;
+  flex-direction: column;
 }
