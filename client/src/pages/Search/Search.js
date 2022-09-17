@@ -22,6 +22,7 @@ export const Search = () => {
     fetchProducts();
   }, []);
 
+  //Price Filter
   const filterPrice = (e, validator) => {
     console.log("inf u");
     const value = e.target.value;
