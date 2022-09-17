@@ -6,6 +6,7 @@ import Card from "./components/Card/Card";
 
 export const Search = () => {
   const [products, setProducts] = useState([]);
+  const [pricefilter, setPricefilter] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -14,6 +15,23 @@ export const Search = () => {
     };
     fetchProducts();
   }, []);
+
+  const filterPrice = (e) => {
+    console.log("inf u");
+    const value = e.target.value;
+    if (value === "499") {
+      const filteredProducts = products.filter(
+        (item) => item.discount_price <= 499
+      );
+      console.log(filteredProducts);
+      setProducts(filteredProducts);
+    } else if (value === "500") {
+      const filteredProducts = products.filter(
+        (item) => item.discount_price >= 500
+      );
+      setProducts(filteredProducts);
+    }
+  };
 
   return (
     <div>
@@ -66,11 +84,21 @@ export const Search = () => {
               <p style={{ fontSize: "24px" }}>PRICE</p>
               <div className="price-list">
                 <label>
-                  <input type="checkbox" value="Armani" /> Under Rs. 500{" "}
+                  <input
+                    type="checkbox"
+                    value="499"
+                    onClick={(e) => filterPrice(e)}
+                  />{" "}
+                  Under Rs. 500{" "}
                 </label>
 
                 <label>
-                  <input type="checkbox" value="Armani" /> Rs. 500 - Rs. 3000
+                  <input
+                    type="checkbox"
+                    value="500"
+                    onClick={(e) => filterPrice(e)}
+                  />{" "}
+                  Rs. 500 - Rs. 3000
                 </label>
               </div>
             </div>
