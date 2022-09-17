@@ -1,10 +1,19 @@
 import React from "react";
 import "./Card.css";
+
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from "@mui/material/Checkbox";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const Card = ({ id, name, price, dprice, product_image, rating }) => {
   return (
     <div className="card-layout">
       <div className="card-image">
         <img src={product_image} className="product-image" alt="product" />
+        <Checkbox
+          icon={<FavoriteBorderIcon />}
+          checkedIcon={<FavoriteIcon />}
+        />
         <div className="overlay">View Product</div>
       </div>
 

@@ -13,7 +13,9 @@ export const Search = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("http://localhost:8000/products");
+      const { data } = await axios.get(
+        "https://ev1caq100pghbac8errci7hhla23.requestly.me/products"
+      );
       setProducts(data);
       setFilteredProducts(data);
     };
@@ -107,7 +109,6 @@ export const Search = () => {
                     onClick={(e) => {
                       setProducts(filteredProducts);
                     }}
-                    checked
                   />{" "}
                   All
                 </label>

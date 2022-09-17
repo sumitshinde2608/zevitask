@@ -9,7 +9,9 @@ const Suggestions = (display) => {
   useEffect(() => {
     const getSuggestions = async () => {
       try {
-        const res = await axios.get(" http://localhost:8000/suggestions");
+        const res = await axios.get(
+          "https://ev1caq100pghbac8errci7hhla23.requestly.me/suggestions  "
+        );
         console.log(res.data);
         setSuggestions(res.data);
       } catch (err) {
@@ -19,7 +21,9 @@ const Suggestions = (display) => {
 
     const getTrends = async () => {
       try {
-        const res = await axios.get(" http://localhost:8000/trends");
+        const res = await axios.get(
+          " https://ev1caq100pghbac8errci7hhla23.requestly.me/trends"
+        );
         console.log(res.data);
         setTrends(res.data);
       } catch (err) {
