@@ -12,7 +12,8 @@ const Card = ({ id, name, price, dprice, product_image, rating }) => {
         <img src={product_image} className="product-image" alt="product" />
         <Checkbox
           icon={<FavoriteBorderIcon />}
-          checkedIcon={<FavoriteIcon />}
+          checkedIcon={<FavoriteIcon style={{ color: "red" }} />}
+          className="fav-icon"
         />
         <div className="overlay">View Product</div>
       </div>
