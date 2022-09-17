@@ -6,30 +6,40 @@ import Card from "./components/Card/Card";
 
 export const Search = () => {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [pricefilter, setPricefilter] = useState(false);
+  // const [below500filter, setBelow500filter] = useState(false);
+  // const [above500filter, setAbove500filter] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get("http://localhost:8000/products");
       setProducts(data);
+      setFilteredProducts(data);
+      // Products.push(data);
     };
     fetchProducts();
   }, []);
 
-  const filterPrice = (e) => {
+  const filterPrice = (e, validator) => {
     console.log("inf u");
     const value = e.target.value;
-    if (value === "499") {
-      const filteredProducts = products.filter(
-        (item) => item.discount_price <= 499
-      );
-      console.log(filteredProducts);
-      setProducts(filteredProducts);
-    } else if (value === "500") {
-      const filteredProducts = products.filter(
-        (item) => item.discount_price >= 500
-      );
-      setProducts(filteredProducts);
+    let Products = filteredProducts;
+    if (validator) {
+      if (value === "499") {
+        const products_list = Products.filter(
+          (item) => item.discount_price <= 499
+        );
+        console.log(products_list);
+        setProducts(products_list);
+      } else if (value === "500") {
+        const products_list = Products.filter(
+          (item) => item.discount_price >= 500
+        );
+        setProducts(products_list);
+      }
+    } else {
+      setProducts(Products);
     }
   };
 
@@ -87,7 +97,15 @@ export const Search = () => {
                   <input
                     type="checkbox"
                     value="499"
-                    onClick={(e) => filterPrice(e)}
+                    onClick={async (e) => {
+                      if (!pricefilter) {
+                        setPricefilter(true);
+                        filterPrice(e, true);
+                      } else {
+                        setPricefilter(false);
+                        filterPrice(e, false);
+                      }
+                    }}
                   />{" "}
                   Under Rs. 500{" "}
                 </label>
@@ -96,7 +114,15 @@ export const Search = () => {
                   <input
                     type="checkbox"
                     value="500"
-                    onClick={(e) => filterPrice(e)}
+                    onClick={async (e) => {
+                      if (!pricefilter) {
+                        setPricefilter(true);
+                        filterPrice(e, true);
+                      } else {
+                        setPricefilter(false);
+                        filterPrice(e, false);
+                      }
+                    }}
                   />{" "}
                   Rs. 500 - Rs. 3000
                 </label>
