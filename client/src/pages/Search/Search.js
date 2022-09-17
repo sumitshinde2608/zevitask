@@ -16,7 +16,6 @@ export const Search = () => {
       const { data } = await axios.get("http://localhost:8000/products");
       setProducts(data);
       setFilteredProducts(data);
-      // Products.push(data);
     };
     fetchProducts();
   }, []);
@@ -102,15 +101,24 @@ export const Search = () => {
               <div className="brands-list">
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
+                    name="filters"
+                    value="Apple"
+                    onClick={(e) => {
+                      setProducts(filteredProducts);
+                    }}
+                    checked
+                  />{" "}
+                  All
+                </label>
+                <label>
+                  <input
+                    type="radio"
                     value="Armani"
+                    name="filters"
                     onClick={async (e) => {
                       if (!brandfilter) {
-                        setBrandfilter(true);
                         filterBrands(e, true);
-                      } else {
-                        setBrandfilter(false);
-                        filterBrands(e, false);
                       }
                     }}
                   />
@@ -119,15 +127,12 @@ export const Search = () => {
 
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="HRX"
+                    name="filters"
                     onClick={async (e) => {
                       if (!brandfilter) {
-                        setBrandfilter(true);
                         filterBrands(e, true);
-                      } else {
-                        setBrandfilter(false);
-                        filterBrands(e, false);
                       }
                     }}
                   />
@@ -136,15 +141,12 @@ export const Search = () => {
 
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="HnM"
+                    name="filters"
                     onClick={async (e) => {
                       if (!brandfilter) {
-                        setBrandfilter(true);
                         filterBrands(e, true);
-                      } else {
-                        setBrandfilter(false);
-                        filterBrands(e, false);
                       }
                     }}
                   />
@@ -159,15 +161,13 @@ export const Search = () => {
               <div className="price-list">
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="499"
+                    name="filters"
                     onClick={async (e) => {
                       if (!pricefilter) {
-                        setPricefilter(true);
+                        // setPricefilter(true);
                         filterPrice(e, true);
-                      } else {
-                        setPricefilter(false);
-                        filterPrice(e, false);
                       }
                     }}
                   />{" "}
@@ -176,15 +176,13 @@ export const Search = () => {
 
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="500"
+                    name="filters"
                     onClick={async (e) => {
                       if (!pricefilter) {
-                        setPricefilter(true);
+                        // setPricefilter(true);
                         filterPrice(e, true);
-                      } else {
-                        setPricefilter(false);
-                        filterPrice(e, false);
                       }
                     }}
                   />{" "}
@@ -198,15 +196,13 @@ export const Search = () => {
               <div className="ratings-list">
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="5"
+                    name="filters"
                     onClick={(e) => {
                       if (!ratingfilter) {
-                        setRatingfilter(true);
+                        // setRatingfilter(true);
                         filterRating(e, true);
-                      } else {
-                        setRatingfilter(false);
-                        filterRating(e, false);
                       }
                     }}
                   />
@@ -215,15 +211,12 @@ export const Search = () => {
 
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="4"
+                    name="filters"
                     onClick={(e) => {
                       if (!ratingfilter) {
-                        setRatingfilter(true);
                         filterRating(e, true);
-                      } else {
-                        setRatingfilter(false);
-                        filterRating(e, false);
                       }
                     }}
                   />
@@ -232,15 +225,12 @@ export const Search = () => {
 
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="3"
+                    name="filters"
                     onClick={(e) => {
                       if (!ratingfilter) {
-                        setRatingfilter(true);
                         filterRating(e, true);
-                      } else {
-                        setRatingfilter(false);
-                        filterRating(e, false);
                       }
                     }}
                   />
@@ -249,15 +239,12 @@ export const Search = () => {
 
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="2"
+                    name="filters"
                     onClick={(e) => {
                       if (!ratingfilter) {
-                        setRatingfilter(true);
                         filterRating(e, true);
-                      } else {
-                        setRatingfilter(false);
-                        filterRating(e, false);
                       }
                     }}
                   />
@@ -266,15 +253,12 @@ export const Search = () => {
 
                 <label>
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="1"
+                    name="filters"
                     onClick={(e) => {
                       if (!ratingfilter) {
-                        setRatingfilter(true);
                         filterRating(e, true);
-                      } else {
-                        setRatingfilter(false);
-                        filterRating(e, false);
                       }
                     }}
                   />
