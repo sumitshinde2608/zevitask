@@ -60,10 +60,7 @@ export const Search = () => {
         </div>
       </div>
 
-      <div className="results">
-        <div style={{ paddingLeft: "40px" }}>
-          <h1>Search Results</h1>
-        </div>
+      <div className="container">
         <div className="results-area">
           <div className="search-results">
             {products?.map((product) => (

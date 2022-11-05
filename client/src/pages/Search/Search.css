@@ -80,6 +80,9 @@ input[type="search"]:focus {
 .results-area {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  /* background-color: pink; */
 }
 
 .search-filters {
@@ -112,12 +115,15 @@ label {
   display: flex;
   /* flex-flow: row wrap; */
   flex-flow: row wrap;
-  justify-content: flex-start;
   justify-content: center;
+  align-items: stretch;
+  /* background-color: yellow; */
 
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  /* display: grid;
+  grid-template-columns: repeat(4, max-content);
+  grid-auto-flow: row; */
+  /* justify-content: center; */
+
   /* justify-content: space-around; */
 }
 
