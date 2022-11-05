@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import Logo from "./assets/logo.png";
 import Suggestions from "./components/Suggestions/Suggestions";
+import { Link } from "react-router-dom";
 
 // import SearchButton from "./search-button.png";
 
 const Landing = () => {
   const [suggestionsDisplay, setSuggestionsDisplay] = useState(false);
+  const [query, setQuery] = useState("");
+  // const location = {
+  //   pathname: "/search",
+  //   state: {
+  //     q: { query },
+  //   },
+  // };
+
+  useEffect(() => {
+    if (query.length === 0) {
+      setSuggestionsDisplay(false);
+    }
+  }, [query]);
   return (
     <div className="main-container">
       <div className="head-nav">
@@ -18,25 +32,24 @@ const Landing = () => {
             <input
               type="search"
               placeholder="Search"
-              onFocus={() => {
-                setSuggestionsDisplay("block");
+              onChange={(event) => {
+                setSuggestionsDisplay(true);
+                setQuery(event.target.value);
               }}
             />
-            <a href="/search">
-              <input
-                type="button"
-                value="Search"
-                // onClick={() => {
-                //   console.log("clicked");
-                // }}
-              />
-            </a>
-            {/* </input> */}
+            <Link
+              onClick={(event) => (!query ? event.preventDefault() : null)}
+              to={`search/?q=${query}`}
+            >
+              <input type="button" value="Search" />
+            </Link>
           </form>
         </div>
 
         <div className="suggestions">
-          {suggestionsDisplay ? <Suggestions props={true} /> : null}
+          {suggestionsDisplay ? (
+            <Suggestions displaySuggestions={true} query={query} />
+          ) : null}
         </div>
       </div>
     </div>
