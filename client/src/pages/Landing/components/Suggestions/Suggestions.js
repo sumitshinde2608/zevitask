@@ -29,30 +29,26 @@ const Suggestions = (display) => {
 
   return (
     <div className="suggestion-container">
-      <div className="popular-suggestions">
-        <div className="suggestions-list">
-          {suggestions.map((suggestion) => (
-            <>
-              <Link
-                onClick={(event) =>
-                  !suggestion ? event.preventDefault() : null
-                }
-                to={`search/?q=${suggestion}`}
+      <div className="suggestions-list">
+        {suggestions.map((suggestion) => (
+          <>
+            <Link
+              onClick={(event) => (!suggestion ? event.preventDefault() : null)}
+              to={`search/?q=${suggestion}`}
+            >
+              <span
+                style={{
+                  fontSize: "18px",
+                  marginBottom: "15px",
+                }}
               >
-                <span
-                  style={{
-                    fontSize: "18px",
-                    marginBottom: "15px",
-                  }}
-                >
-                  {" "}
-                  {suggestion}
-                  <br />
-                </span>
-              </Link>
-            </>
-          ))}
-        </div>
+                {" "}
+                {suggestion}
+                <br />
+              </span>
+            </Link>
+          </>
+        ))}
       </div>
     </div>
   );
