@@ -51,8 +51,12 @@ export const Search = () => {
                 if (e.key === "Enter") {
                   e.preventDefault();
                   console.log("here->", newQuery);
-                  setQuery(newQuery);
-                  setSuggestionsDisplay(false);
+                  if (newQuery.trim().length !== 0) {
+                    setQuery(newQuery);
+                    setSuggestionsDisplay(false);
+                  } else {
+                    alert("Enter your query in the search bar");
+                  }
                 }
               }}
               defaultValue={query.replace(/%20/g, " ")}

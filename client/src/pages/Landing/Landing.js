@@ -44,8 +44,11 @@ const Landing = () => {
                   e.preventDefault();
 
                   setSuggestionsDisplay(false);
-                  // if (query.trim().length !== 0) {
-                  history(`/search/?q=${query}`);
+                  if (query.trim().length !== 0) {
+                    history(`/search/?q=${query}`);
+                  } else {
+                    alert("Enter your query in the search bar");
+                  }
                 }
               }}
             />
