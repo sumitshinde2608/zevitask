@@ -4,10 +4,12 @@ import "./Search.css";
 import Logo from "./assets/logo.png";
 import Card from "./components/Card/Card";
 import { useLocation } from "react-router-dom";
+import Suggestions from "../Landing/components/Suggestions/Suggestions";
 
 export const Search = () => {
   const [products, setProducts] = useState([]);
   // const [filteredProducts, setFilteredProducts] = useState([]);
+  const [suggestionsDisplay, setSuggestionsDisplay] = useState(false);
   const location = useLocation();
   console.log("L-> ", location.search);
 
@@ -27,6 +29,12 @@ export const Search = () => {
     fetchProducts();
   }, [query]);
 
+  useEffect(() => {
+    if (query.length === 0) {
+      setSuggestionsDisplay(false);
+    }
+  }, [query]);
+
   return (
     <div>
       <div className="search-area">
@@ -37,6 +45,7 @@ export const Search = () => {
               placeholder="Search"
               onChange={(e) => {
                 setNewQuery(e.target.value);
+                setSuggestionsDisplay(true);
               }}
               defaultValue={query}
             />
@@ -49,6 +58,7 @@ export const Search = () => {
             />
           </form>
         </div>
+
         <div>
           <img
             id="zevi-logo"
@@ -58,6 +68,11 @@ export const Search = () => {
             width="100px"
           />
         </div>
+      </div>
+      <div className="suggestions">
+        {suggestionsDisplay ? (
+          <Suggestions displaySuggestions={true} query={query} />
+        ) : null}
       </div>
 
       <div className="container">
