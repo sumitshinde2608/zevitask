@@ -3,6 +3,7 @@ import "./Landing.css";
 import Logo from "./assets/logo.png";
 import Suggestions from "./components/Suggestions/Suggestions";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import SearchButton from "./search-button.png";
 
@@ -15,6 +16,8 @@ const Landing = () => {
   //     q: { query },
   //   },
   // };
+
+  const history = useNavigate();
 
   useEffect(() => {
     if (query.length === 0) {
@@ -35,6 +38,15 @@ const Landing = () => {
               onChange={(event) => {
                 setSuggestionsDisplay(true);
                 setQuery(event.target.value);
+              }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+
+                  setSuggestionsDisplay(false);
+                  // if (query.trim().length !== 0) {
+                  history(`/search/?q=${query}`);
+                }
               }}
             />
             <Link
