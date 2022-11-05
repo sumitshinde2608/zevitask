@@ -30,7 +30,7 @@ export const Search = () => {
   return (
     <div>
       <div className="search-area">
-        <div className="searchbar">
+        <div className="searchbar-search">
           <form>
             <input
               type="search"

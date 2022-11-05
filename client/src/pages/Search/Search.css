@@ -6,9 +6,9 @@
   justify-content: center;
 }
 
-.searchbar {
+.searchbar-search {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: flex-start;
   margin-top: 20px;
   /* background-color: #1183d6; */
@@ -114,6 +114,10 @@ label {
   flex-flow: row wrap;
   justify-content: flex-start;
   justify-content: center;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
   /* justify-content: space-around; */
 }
 
