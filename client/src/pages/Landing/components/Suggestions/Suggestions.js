@@ -32,9 +32,9 @@ const Suggestions = (display) => {
       <div className="suggestions-list">
         {suggestions.map((suggestion) => (
           <>
-            <Link
+            <a
               onClick={(event) => (!suggestion ? event.preventDefault() : null)}
-              to={`search/?q=${suggestion}`}
+              href={`/search/?q=${suggestion}`}
             >
               <span
                 style={{
@@ -46,7 +46,7 @@ const Suggestions = (display) => {
                 {suggestion}
                 <br />
               </span>
-            </Link>
+            </a>
           </>
         ))}
       </div>

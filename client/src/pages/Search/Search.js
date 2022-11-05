@@ -30,10 +30,10 @@ export const Search = () => {
   }, [query]);
 
   useEffect(() => {
-    if (query.length === 0) {
+    if (newQuery.length === 0) {
       setSuggestionsDisplay(false);
     }
-  }, [query]);
+  }, [newQuery]);
 
   return (
     <div>
@@ -47,13 +47,14 @@ export const Search = () => {
                 setNewQuery(e.target.value);
                 setSuggestionsDisplay(true);
               }}
-              defaultValue={query}
+              defaultValue={query.replace(/%20/g, " ")}
             />
             <input
               type="button"
               value="Search"
               onClick={() => {
                 setQuery(newQuery);
+                setSuggestionsDisplay(false);
               }}
             />
           </form>
@@ -71,7 +72,7 @@ export const Search = () => {
       </div>
       <div className="suggestions">
         {suggestionsDisplay ? (
-          <Suggestions displaySuggestions={true} query={query} />
+          <Suggestions displaySuggestions={true} query={newQuery} />
         ) : null}
       </div>
 
