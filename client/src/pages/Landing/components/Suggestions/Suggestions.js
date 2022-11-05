@@ -13,7 +13,7 @@ const Suggestions = (display) => {
         const res = await axios.get(
           `https://staging.search.zevi.in/autocomplete/?store=hulpoc&usecache=False&q=?${display.query}`
         );
-        console.log("received data", res.data.autocomplete_list);
+        // console.log("received data", res.data.autocomplete_list);
         setSuggestions(res.data.autocomplete_list);
       } catch (err) {
         console.log(err);
@@ -23,9 +23,9 @@ const Suggestions = (display) => {
     getSuggestions();
   }, [display.query]);
 
-  useEffect(() => {
-    console.log("Suggestions received", suggestions);
-  }, [suggestions]);
+  // useEffect(() => {
+  //   // console.log("Suggestions received", suggestions);
+  // }, [suggestions]);
 
   return (
     <div className="suggestion-container">

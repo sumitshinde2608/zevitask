@@ -11,9 +11,9 @@ export const Search = () => {
   // const [filteredProducts, setFilteredProducts] = useState([]);
   const [suggestionsDisplay, setSuggestionsDisplay] = useState(false);
   const location = useLocation();
-  console.log("L-> ", location.search);
+  // console.log("L-> ", location.search);
 
-  console.log("q->", location.search.slice(3));
+  // console.log("q->", location.search.slice(3));
   const [query, setQuery] = useState(location.search.slice(3));
   const [newQuery, setNewQuery] = useState("");
 
@@ -23,7 +23,7 @@ export const Search = () => {
         `https://staging.search.zevi.in/search/?store=hulpoc&rank=True&q=${query}`
       );
       setProducts(data.data.ranked_list);
-      console.log(data.data.ranked_list);
+      // console.log(data.data.ranked_list);
       // setFilteredProducts(data);
     };
     fetchProducts();
@@ -46,6 +46,14 @@ export const Search = () => {
               onChange={(e) => {
                 setNewQuery(e.target.value);
                 setSuggestionsDisplay(true);
+              }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  console.log("here->", newQuery);
+                  setQuery(newQuery);
+                  setSuggestionsDisplay(false);
+                }
               }}
               defaultValue={query.replace(/%20/g, " ")}
             />
