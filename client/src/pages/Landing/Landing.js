@@ -44,12 +44,11 @@ const Landing = () => {
               <input type="button" value="Search" />
             </Link>
           </form>
-        </div>
-
-        <div className="suggestions">
-          {suggestionsDisplay ? (
-            <Suggestions displaySuggestions={true} query={query} />
-          ) : null}
+          <div className="suggestions">
+            {suggestionsDisplay ? (
+              <Suggestions displaySuggestions={true} query={query} />
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

@@ -34,9 +34,11 @@
 
 .searchbar {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
+  flex-direction: column;
   margin-top: 90px;
+  background-color: pink;
 }
 #zevi-logo {
   padding: 2rem;
@@ -116,4 +118,8 @@ input[type="search"]:focus {
   box-shadow: 0 0 3px 0 #1183d6;
   border-color: #1183d6;
   outline: none;
+}
+
+.suggestions {
+  width: 100%;
 }

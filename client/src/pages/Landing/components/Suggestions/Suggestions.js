@@ -30,7 +30,6 @@ const Suggestions = (display) => {
   return (
     <div className="suggestion-container">
       <div className="popular-suggestions">
-        <h2>Suggestions</h2>
         <div className="suggestions-list">
           {suggestions.map((suggestion) => (
             <>
